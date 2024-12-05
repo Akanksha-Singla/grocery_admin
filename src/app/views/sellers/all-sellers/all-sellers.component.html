@@ -1,0 +1,47 @@
+
+<div>
+    <app-searchbar (search)="filterSellers($event)"></app-searchbar>
+</div>
+<div class="table-container">
+     <table mat-table [dataSource]="dataSource">
+
+    <!-- Username Column -->
+    <ng-container matColumnDef="username">
+      <th mat-header-cell *matHeaderCellDef> Username </th>
+      <td mat-cell *matCellDef="let element"> {{element.username}} </td>
+    </ng-container>
+
+    <!-- Email Column -->
+    <ng-container matColumnDef="email">
+      <th mat-header-cell *matHeaderCellDef> Email </th>
+      <td mat-cell *matCellDef="let element"> {{element.email}} </td>
+    </ng-container>
+
+   <!-- Email Column -->
+   <ng-container matColumnDef="contact_number">
+    <th mat-header-cell *matHeaderCellDef> Contact Number </th>
+    <td mat-cell *matCellDef="let element"> {{element.contact_number}} </td>
+  </ng-container>
+
+    <!-- Weight Column -->
+    <ng-container matColumnDef="status">
+      <th mat-header-cell *matHeaderCellDef> Status </th>
+      <td mat-cell *matCellDef="let element"> {{element.status}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="action">
+        <th mat-header-cell *matHeaderCellDef> Action </th>
+        <td mat-cell *matCellDef="let element">
+          <mat-icon (click)="updateSellerStatus(element._id, 'approved')" class="green">check_circle</mat-icon>
+          <mat-icon (click)="updateSellerStatus(element._id, 'reject')"  class="red"  > cancel_circle</mat-icon>
+        </td>
+      </ng-container>
+
+    <!-- Header and Row Definitions -->
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+
+  <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons aria-label="Select page of sellers">
+  </mat-paginator>
+</div>

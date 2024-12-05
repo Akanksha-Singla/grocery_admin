@@ -1,0 +1,40 @@
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .app-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+  
+  .nav-links {
+    display: flex;
+    gap: 20px;
+    
+    a {
+      text-decoration: none;
+    }
+  
+    .menu-items {
+      font-size: 1rem; 
+      display: flex;
+      align-items: center;
+      margin: 1.5rem;
+      color: white;
+      transition: transform 0.2s ease;
+  
+      &:hover {
+        transform: scale(1.1);
+        }
+    }
+  }
+  
+  .spacer {
+    flex: 1 1 auto;
+  }
+  
+  .color-white{
+    color:white
+  }

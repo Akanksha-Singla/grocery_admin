@@ -1,0 +1,18 @@
+<mat-toolbar color="primary" class="navbar">
+  <span class="app-title">Admin Dashboard</span>
+
+  <nav class="nav-links">
+    <a *ngFor="let menu of adminMenus" (click)="navigateTo(menu.redirectURL)">
+   <span class="menu-items">{{menu.label}}</span> 
+    </a>
+  </nav>
+
+  <span class="spacer"></span>
+
+  <mat-icon class="color-white" matprefix>person</mat-icon>
+  <button mat-icon-button aria-label="Logout" (click)="logout()">
+     <mat-icon class="color-white" matprefix>exit_to_app</mat-icon>
+  </button>
+</mat-toolbar>
+
+<router-outlet></router-outlet>

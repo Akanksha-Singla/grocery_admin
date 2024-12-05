@@ -1,0 +1,35 @@
+.table-container{
+    width: 90%;
+    margin:3rem;
+    // box-shadow: -6px 6px 15px rgba(0, 0, 0, 0.3);
+    box-shadow: -6px 6px 15px rgb(126, 152, 126);
+   }
+
+table {
+      
+}
+  
+  .green{
+    color:green;
+    margin-right:0.5rem;
+  }
+
+ .red{
+    color:red;
+    // margin:0.5rem;
+  }
+
+  .green, .red {
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, color 0.3s ease;
+  
+    &:hover {
+      transform: scale(1.3);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); // Adds subtle shadow
+    }
+  
+    &:active {
+      transform: scale(1.5);
+    }
+  }
+  
